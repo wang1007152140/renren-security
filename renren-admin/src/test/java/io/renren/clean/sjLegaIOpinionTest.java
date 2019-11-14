@@ -54,7 +54,7 @@ public class sjLegaIOpinionTest {
         List<ShLegalOpinionEntity> list=shLegalOpinionService.selectList(new EntityWrapper<ShLegalOpinionEntity>());
         String targerFolder = "F:\\pdf1\\img\\";
         File file = new File("F:\\pdf2");
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 20; i < list.size(); i++) {
             int finalI = i;
             File[] files = file.listFiles(new FileFilter() {
                 @Override
