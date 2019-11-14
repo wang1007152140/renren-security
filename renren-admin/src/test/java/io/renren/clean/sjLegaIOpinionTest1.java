@@ -13,7 +13,7 @@ public class sjLegaIOpinionTest1 {
 //        File file=new File("F:\\pdf2\\安正时尚：上海市锦天城律师事务所关于安正时尚集团股份有限公司回购注销部分限制性股票的法律意见书.pdf");
 //        System.out.println(file.getName());
 
-        String str=" 王 臣伟       厉 害         尼 玛的那     里 斯  ";
+        String str="颜华荣                         李  燕                                                                         汪  琛";
         System.out.println(Wutils.replacePluralBlank(str));
 
     }

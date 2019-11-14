@@ -70,6 +70,7 @@ public class sjLegaIOpinionTest {
                     if (pdfContent.length() < 50) {
                         pdfContent = extractImages(files[j], targerFolder);
                     }
+                    String pdft=extractImages(files[j], targerFolder);
                     setCompanyAndLawFirmName(list.get(i),pdfContent);
                     if((list.get(i).getFvLowerFirm()==null||list.get(i).getFvLowerFirm().equals(""))
                             &&(list.get(i).getFvCompanyName()==null||list.get(i).getFvCompanyName().equals(""))){

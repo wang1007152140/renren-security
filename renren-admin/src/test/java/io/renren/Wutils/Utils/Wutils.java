@@ -146,7 +146,7 @@ public class Wutils {
     public static String replacePluralBlank(String str){
         if (str!=null&&str!="") {
             str=str.trim();
-            Pattern p = Pattern.compile("(\\s){2,}");
+            Pattern p = Pattern.compile("(\\s){3,}");
             Matcher m = p.matcher(str);
             str=m.replaceAll("/");
             str=str.replace(" ","")
