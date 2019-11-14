@@ -70,7 +70,7 @@ public class sjLegaIOpinionTest {
                     if (pdfContent.length() < 50) {
                         pdfContent = extractImages(files[j], targerFolder);
                     }
-                    String pdft=extractImages(files[j], targerFolder);
+                    //String pdft=extractImages(files[j], targerFolder);
                     setCompanyAndLawFirmName(list.get(i),pdfContent);
                     if((list.get(i).getFvLowerFirm()==null||list.get(i).getFvLowerFirm().equals(""))
                             &&(list.get(i).getFvCompanyName()==null||list.get(i).getFvCompanyName().equals(""))){
@@ -191,6 +191,7 @@ public class sjLegaIOpinionTest {
         }
         ArrayList<String> arrayList=new ArrayList<String>();
         arrayList.add(".*年.*月.*日");
+        arrayList.add(".*年.*月");
         String age=RegularUtils.ifFullinterceptionFromText(pdfContent,arrayList);
         if (age!=null&&age!=""){
             pdfContent=pdfContent.substring(0,pdfContent.lastIndexOf(age));
