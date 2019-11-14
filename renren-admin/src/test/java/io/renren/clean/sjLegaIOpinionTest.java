@@ -205,7 +205,7 @@ public class sjLegaIOpinionTest {
         String single="()（）【】[]{}<>《》、：:-_•⼆〇";
         String group=legalOpinionEntity.getFvLowerFirm()+"-"+"签字-盖章-签名-公章-经办律师-负责人-单位负责人-律师-章-承办律师-主办律师-见证律师" +
                 "-签字律师-执行律师-律  师-经办人-经 办 律 师-承 办 律 师-主 办 律 师-执 行 律 师-签 字 律 师-签章-签 章-盖 章-公 章" +
-                "-签 字-签署-签 署-中国-中 国-日期-日 期-参加-出席-列席-指派-委派-律师事务所负责人-执业律师-主任-负-则-人-事务所-事-务-所";
+                "-签 字-签署-签 署-中国-中 国-日期-日 期-参加-出席-列席-指派-委派-律师事务所负责人-执业律师-主任-负-责-人-事务所-事-务-所";
         pdfContent= Wutils.replaceGarbage(pdfContent,single,group);
         pdfContent=Wutils.replacePluralBlank(pdfContent);
         String[] names=pdfContent.split("\\s+");
