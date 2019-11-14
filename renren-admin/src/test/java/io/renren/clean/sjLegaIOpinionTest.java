@@ -50,11 +50,10 @@ public class sjLegaIOpinionTest {
 
     @Test
     public void func2(){
-
         List<ShLegalOpinionEntity> list=shLegalOpinionService.selectList(new EntityWrapper<ShLegalOpinionEntity>());
         String targerFolder = "F:\\pdf1\\img\\";
         File file = new File("F:\\pdf2");
-        for (int i = 20; i < list.size(); i++) {
+        for (int i =0; i < list.size(); i++) {
             int finalI = i;
             File[] files = file.listFiles(new FileFilter() {
                 @Override
@@ -72,12 +71,17 @@ public class sjLegaIOpinionTest {
                     }
                     //String pdft=extractImages(files[j], targerFolder);
                     setCompanyAndLawFirmName(list.get(i),pdfContent);
-                    if((list.get(i).getFvLowerFirm()==null||list.get(i).getFvLowerFirm().equals(""))
-                            &&(list.get(i).getFvCompanyName()==null||list.get(i).getFvCompanyName().equals(""))){
+                    if(
+                            (list.get(i).getFvLowerFirm()==null||list.get(i).getFvLowerFirm().equals(""))
+                            &&
+                            (list.get(i).getFvCompanyName()==null||list.get(i).getFvCompanyName().equals(""))
+                    )
+                    {
                         setCompanyAndLawFirmName2(list.get(i),pdfContent);
                     }
                     setFvLowerAndPrincipal(list.get(i),pdfContent);
                     System.out.println(list.get(i).getId() + "" + shLegalOpinionService.updateById(list.get(i)));
+                    logger.info(list.get(i).getId()+"--i--"+i+"------");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -188,6 +192,9 @@ public class sjLegaIOpinionTest {
             pdfContent = pdfContent.substring(pdfContent.lastIndexOf("事务所"));
         }else if (pdfContent.contains("律师")) {
             pdfContent = pdfContent.substring(pdfContent.lastIndexOf("律师"));
+        }
+        if(pdfContent.contains("经办律师")||pdfContent.contains("负责人")){
+
         }
         ArrayList<String> arrayList=new ArrayList<String>();
         arrayList.add(".*年.*月.*日");
